@@ -48,6 +48,7 @@ class ProductImage: UIImageView {
         activityIndicator.stopAnimating()
     }
     
+    
     func startAnimatingActivity() {
            activityIndicator.startAnimating()
     }

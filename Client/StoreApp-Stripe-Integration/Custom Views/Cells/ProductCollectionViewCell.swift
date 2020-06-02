@@ -19,7 +19,8 @@ class ProductCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configure()
+        configureStackView()
+        layoutUI()
     }
     
     
@@ -28,18 +29,21 @@ class ProductCollectionViewCell: UICollectionViewCell {
     }
     
     
-    private func configure() {
-        contentView.backgroundColor = .systemBlue
-        contentView.layer.cornerRadius = 15
-        
-        addSubview(productImageView)
+    private func configureStackView() {
         stackView.axis = .horizontal
         stackView.distribution = .equalSpacing
         stackView.addArrangedSubview(nameLabel)
         stackView.addArrangedSubview(priceLabel)
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(stackView)
+    }
+    
+    
+    private func layoutUI() {
+        contentView.backgroundColor = .systemBlue
+        contentView.layer.cornerRadius = 15
         
+        addSubview(productImageView)
+        addSubview(stackView)
         
         let padding: CGFloat = 7
         NSLayoutConstraint.activate([
@@ -52,14 +56,8 @@ class ProductCollectionViewCell: UICollectionViewCell {
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: padding),
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -padding),
             stackView.heightAnchor.constraint(equalToConstant: 20),
-            
-            
-            
-            
-            
         ])
         productImageView.configureActivityIndicator()
-        
     }
     
     

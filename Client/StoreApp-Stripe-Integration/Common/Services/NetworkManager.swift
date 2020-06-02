@@ -7,14 +7,14 @@
 //
 
 import Foundation
-let API_URL = "http://192.168.1.8/api/products.php"
+
 
 struct NetworkManager {
     static let shared = NetworkManager()
     let decoder = JSONDecoder()
     
     func getProducts(completionHandler: @escaping(Result<[Product], Error>) -> Void){
-        Networker.shared.performRequest(urlString: API_URL) { (data) in
+        Networker.shared.performRequest(urlString: "\(Constants.API_URL)products.php") { (data) in
             do{
                 let products = try self.decoder.decode([Product].self, from: data)
                 completionHandler(.success(products))

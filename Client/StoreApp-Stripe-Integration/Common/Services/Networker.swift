@@ -11,6 +11,7 @@ import Foundation
 struct Networker {
     static let shared = Networker()
     
+    #warning("Proslijediti već napravljeni URL")
     func performRequest(urlString: String, completionHandler: @escaping (Data)->Void) {
         let urlStringWithoutSpace = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         if let url = URL(string: urlStringWithoutSpace){

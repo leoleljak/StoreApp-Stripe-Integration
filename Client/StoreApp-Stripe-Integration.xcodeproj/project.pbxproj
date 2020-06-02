@@ -18,7 +18,6 @@
 		ED2659ED2486B694003A882D /* ProductDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659EC2486B694003A882D /* ProductDetailsVC.swift */; };
 		EDF55CA724865B6D003A023C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF55CA624865B6D003A023C /* AppDelegate.swift */; };
 		EDF55CA924865B6D003A023C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF55CA824865B6D003A023C /* SceneDelegate.swift */; };
-		EDF55CAB24865B6D003A023C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF55CAA24865B6D003A023C /* ViewController.swift */; };
 		EDF55CB024865B71003A023C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF55CAF24865B71003A023C /* Assets.xcassets */; };
 		EDF55CB324865B71003A023C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDF55CB124865B71003A023C /* LaunchScreen.storyboard */; };
 		EDF55CBB24865E61003A023C /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF55CBA24865E61003A023C /* ProductsViewController.swift */; };
@@ -39,7 +38,6 @@
 		EDF55CA324865B6D003A023C /* StoreApp-Stripe-Integration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StoreApp-Stripe-Integration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF55CA624865B6D003A023C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDF55CA824865B6D003A023C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EDF55CAA24865B6D003A023C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EDF55CAF24865B71003A023C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDF55CB224865B71003A023C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDF55CB424865B71003A023C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,6 +60,7 @@
 		ED2659CF24867D15003A882D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EDF55CBC24866008003A023C /* LLConstants.swift */,
 				ED2659D024867D25003A882D /* Product.swift */,
 			);
 			path = Model;
@@ -136,6 +135,34 @@
 			path = UIImageView;
 			sourceTree = "<group>";
 		};
+		ED2659EE2486B782003A882D /* App Lifecycle */ = {
+			isa = PBXGroup;
+			children = (
+				EDF55CA624865B6D003A023C /* AppDelegate.swift */,
+				EDF55CA824865B6D003A023C /* SceneDelegate.swift */,
+			);
+			path = "App Lifecycle";
+			sourceTree = "<group>";
+		};
+		ED2659EF2486B79C003A882D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EDF55CB124865B71003A023C /* LaunchScreen.storyboard */,
+				EDF55CAF24865B71003A023C /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		ED2659F02486B7A7003A882D /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				EDF55CBA24865E61003A023C /* ProductsViewController.swift */,
+				EDF55CBE24866143003A023C /* CartViewController.swift */,
+				ED2659EC2486B694003A882D /* ProductDetailsVC.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		EDF55C9A24865B6D003A023C = {
 			isa = PBXGroup;
 			children = (
@@ -155,19 +182,13 @@
 		EDF55CA524865B6D003A023C /* StoreApp-Stripe-Integration */ = {
 			isa = PBXGroup;
 			children = (
+				ED2659EE2486B782003A882D /* App Lifecycle */,
 				ED2659D6248680E1003A882D /* Custom Views */,
 				ED2659D224867FFB003A882D /* Common */,
 				ED2659CF24867D15003A882D /* Model */,
-				EDF55CA624865B6D003A023C /* AppDelegate.swift */,
-				EDF55CA824865B6D003A023C /* SceneDelegate.swift */,
-				EDF55CAA24865B6D003A023C /* ViewController.swift */,
-				EDF55CAF24865B71003A023C /* Assets.xcassets */,
-				EDF55CB124865B71003A023C /* LaunchScreen.storyboard */,
+				ED2659EF2486B79C003A882D /* Resources */,
+				ED2659F02486B7A7003A882D /* Screens */,
 				EDF55CB424865B71003A023C /* Info.plist */,
-				EDF55CBA24865E61003A023C /* ProductsViewController.swift */,
-				EDF55CBC24866008003A023C /* LLConstants.swift */,
-				EDF55CBE24866143003A023C /* CartViewController.swift */,
-				ED2659EC2486B694003A882D /* ProductDetailsVC.swift */,
 			);
 			path = "StoreApp-Stripe-Integration";
 			sourceTree = "<group>";
@@ -243,7 +264,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED2659E3248699FA003A882D /* NetworkManager.swift in Sources */,
-				EDF55CAB24865B6D003A023C /* ViewController.swift in Sources */,
 				ED2659ED2486B694003A882D /* ProductDetailsVC.swift in Sources */,
 				EDF55CA724865B6D003A023C /* AppDelegate.swift in Sources */,
 				EDF55CBD24866008003A023C /* LLConstants.swift in Sources */,

@@ -8,6 +8,7 @@
 
 import Foundation
 
+//MARK: - SFSymbols Strings
 enum SFSymbols {
     static let store = "bag"
     static let cart = "cart"
@@ -17,7 +18,14 @@ enum SFSymbols {
     
 }
 
+//MARK: - Constants
 enum Constants {
     static let storeTitle = "Store"
     static let cartTitle = "Cart"
+    static let API_URL = "http://192.168.1.8/api/"
 }
+
+
+
+
+

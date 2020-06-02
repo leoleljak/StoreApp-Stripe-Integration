@@ -16,9 +16,9 @@ class ProductsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        getProductsData()
         configureNavBar()
         configureCollectionView()
+        getProductsData()
         
     }
     
@@ -61,8 +61,7 @@ class ProductsViewController: UIViewController {
         collectionView.backgroundColor = .systemBackground
         collectionView.delegate = self
         view.addSubview(collectionView)
-        
-        
+ 
     }
     
     

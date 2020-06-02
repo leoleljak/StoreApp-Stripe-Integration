@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED2659D124867D25003A882D /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659D024867D25003A882D /* Product.swift */; };
+		ED2659D52486800B003A882D /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659D42486800B003A882D /* UIHelper.swift */; };
+		ED2659DA24868103003A882D /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659D824868103003A882D /* ProductCollectionViewCell.swift */; };
+		ED2659DE24868383003A882D /* LLTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659DD24868383003A882D /* LLTitleLabel.swift */; };
+		ED2659E124869967003A882D /* Networker.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659E024869967003A882D /* Networker.swift */; };
+		ED2659E3248699FA003A882D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659E2248699FA003A882D /* NetworkManager.swift */; };
+		ED2659E62486A1F9003A882D /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659E52486A1F9003A882D /* UIImageView+Ext.swift */; };
+		ED2659E92486A522003A882D /* ProductImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659E82486A522003A882D /* ProductImage.swift */; };
+		ED2659EB2486AB9A003A882D /* ProductDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659EA2486AB9A003A882D /* ProductDetailsVC.swift */; };
 		EDF55CA724865B6D003A023C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF55CA624865B6D003A023C /* AppDelegate.swift */; };
 		EDF55CA924865B6D003A023C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF55CA824865B6D003A023C /* SceneDelegate.swift */; };
 		EDF55CAB24865B6D003A023C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF55CAA24865B6D003A023C /* ViewController.swift */; };
@@ -18,6 +27,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED2659D024867D25003A882D /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		ED2659D42486800B003A882D /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		ED2659D824868103003A882D /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		ED2659DD24868383003A882D /* LLTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLTitleLabel.swift; sourceTree = "<group>"; };
+		ED2659E024869967003A882D /* Networker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networker.swift; sourceTree = "<group>"; };
+		ED2659E2248699FA003A882D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		ED2659E52486A1F9003A882D /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
+		ED2659E82486A522003A882D /* ProductImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImage.swift; sourceTree = "<group>"; };
+		ED2659EA2486AB9A003A882D /* ProductDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsVC.swift; sourceTree = "<group>"; };
 		EDF55CA324865B6D003A023C /* StoreApp-Stripe-Integration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StoreApp-Stripe-Integration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF55CA624865B6D003A023C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDF55CA824865B6D003A023C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +59,83 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED2659CF24867D15003A882D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ED2659D024867D25003A882D /* Product.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ED2659D224867FFB003A882D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				ED2659E42486A1E9003A882D /* Extensions */,
+				ED2659DF24869958003A882D /* Services */,
+				ED2659D324868001003A882D /* Utilities */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		ED2659D324868001003A882D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				ED2659D42486800B003A882D /* UIHelper.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		ED2659D6248680E1003A882D /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				ED2659E72486A506003A882D /* UIImageView */,
+				ED2659DC24868357003A882D /* Labels */,
+				ED2659D7248680E7003A882D /* Cells */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		ED2659D7248680E7003A882D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				ED2659D824868103003A882D /* ProductCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		ED2659DC24868357003A882D /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				ED2659DD24868383003A882D /* LLTitleLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		ED2659DF24869958003A882D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				ED2659E024869967003A882D /* Networker.swift */,
+				ED2659E2248699FA003A882D /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		ED2659E42486A1E9003A882D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ED2659E52486A1F9003A882D /* UIImageView+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ED2659E72486A506003A882D /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				ED2659E82486A522003A882D /* ProductImage.swift */,
+			);
+			path = UIImageView;
+			sourceTree = "<group>";
+		};
 		EDF55C9A24865B6D003A023C = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +155,9 @@
 		EDF55CA524865B6D003A023C /* StoreApp-Stripe-Integration */ = {
 			isa = PBXGroup;
 			children = (
+				ED2659D6248680E1003A882D /* Custom Views */,
+				ED2659D224867FFB003A882D /* Common */,
+				ED2659CF24867D15003A882D /* Model */,
 				EDF55CA624865B6D003A023C /* AppDelegate.swift */,
 				EDF55CA824865B6D003A023C /* SceneDelegate.swift */,
 				EDF55CAA24865B6D003A023C /* ViewController.swift */,
@@ -67,6 +165,7 @@
 				EDF55CB124865B71003A023C /* LaunchScreen.storyboard */,
 				EDF55CB424865B71003A023C /* Info.plist */,
 				EDF55CBA24865E61003A023C /* ProductsViewController.swift */,
+				ED2659EA2486AB9A003A882D /* ProductDetailsVC.swift */,
 				EDF55CBC24866008003A023C /* LLConstants.swift */,
 				EDF55CBE24866143003A023C /* CartViewController.swift */,
 			);
@@ -143,12 +242,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED2659E3248699FA003A882D /* NetworkManager.swift in Sources */,
 				EDF55CAB24865B6D003A023C /* ViewController.swift in Sources */,
+				ED2659EB2486AB9A003A882D /* ProductDetailsVC.swift in Sources */,
 				EDF55CA724865B6D003A023C /* AppDelegate.swift in Sources */,
 				EDF55CBD24866008003A023C /* LLConstants.swift in Sources */,
 				EDF55CBB24865E61003A023C /* ProductsViewController.swift in Sources */,
+				ED2659E124869967003A882D /* Networker.swift in Sources */,
 				EDF55CBF24866143003A023C /* CartViewController.swift in Sources */,
 				EDF55CA924865B6D003A023C /* SceneDelegate.swift in Sources */,
+				ED2659E62486A1F9003A882D /* UIImageView+Ext.swift in Sources */,
+				ED2659D124867D25003A882D /* Product.swift in Sources */,
+				ED2659DE24868383003A882D /* LLTitleLabel.swift in Sources */,
+				ED2659DA24868103003A882D /* ProductCollectionViewCell.swift in Sources */,
+				ED2659D52486800B003A882D /* UIHelper.swift in Sources */,
+				ED2659E92486A522003A882D /* ProductImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

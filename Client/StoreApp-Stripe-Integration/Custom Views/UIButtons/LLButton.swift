@@ -42,6 +42,7 @@ class LLButton: UIButton {
            setTitleColor(.white, for: .normal)
            titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
            translatesAutoresizingMaskIntoConstraints = false
+        
        }
 
 }

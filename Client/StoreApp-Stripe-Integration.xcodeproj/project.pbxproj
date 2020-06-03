@@ -20,6 +20,7 @@
 		ED2659F42487C2FB003A882D /* ShippingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659F32487C2FB003A882D /* ShippingOptions.swift */; };
 		ED2659F72487C5A1003A882D /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659F62487C5A1003A882D /* RadioButton.swift */; };
 		ED2659F92487F787003A882D /* LLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659F82487F787003A882D /* LLButton.swift */; };
+		ED2659FB2487FF30003A882D /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659FA2487FF30003A882D /* CheckoutVC.swift */; };
 		EDF55CA724865B6D003A023C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF55CA624865B6D003A023C /* AppDelegate.swift */; };
 		EDF55CA924865B6D003A023C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF55CA824865B6D003A023C /* SceneDelegate.swift */; };
 		EDF55CB024865B71003A023C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF55CAF24865B71003A023C /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		ED2659F32487C2FB003A882D /* ShippingOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingOptions.swift; sourceTree = "<group>"; };
 		ED2659F62487C5A1003A882D /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		ED2659F82487F787003A882D /* LLButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLButton.swift; sourceTree = "<group>"; };
+		ED2659FA2487FF30003A882D /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
 		EDF55CA324865B6D003A023C /* StoreApp-Stripe-Integration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StoreApp-Stripe-Integration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF55CA624865B6D003A023C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDF55CA824865B6D003A023C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				EDF55CBA24865E61003A023C /* ProductsViewController.swift */,
 				EDF55CBE24866143003A023C /* CartViewController.swift */,
 				ED2659EC2486B694003A882D /* ProductDetailsVC.swift */,
+				ED2659FA2487FF30003A882D /* CheckoutVC.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED2659FB2487FF30003A882D /* CheckoutVC.swift in Sources */,
 				ED2659E3248699FA003A882D /* NetworkManager.swift in Sources */,
 				ED2659ED2486B694003A882D /* ProductDetailsVC.swift in Sources */,
 				EDF55CA724865B6D003A023C /* AppDelegate.swift in Sources */,

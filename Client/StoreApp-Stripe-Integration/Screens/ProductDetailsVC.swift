@@ -63,8 +63,17 @@ class ProductDetailsVC: UIViewController, UIGestureRecognizerDelegate {
         radioButtonUPS.delegate = self
         radioButtonDHL.delegate = self
         
+       
+        
 
         
+    }
+    
+    
+    @objc func goToCheckout() {
+        print("Pressed")
+        let checkoutVC = CheckoutVC()
+        navigationController?.pushViewController(checkoutVC, animated: true)
     }
     
     
@@ -90,13 +99,13 @@ class ProductDetailsVC: UIViewController, UIGestureRecognizerDelegate {
         shippingContentView.addSubview(radioButtonDHL)
         shippingContentView.addSubview(labelUPS)
         shippingContentView.addSubview(labelDHL)
-        shippingContentView.addSubview(buttonCart)
-        shippingContentView.addSubview(buttonCheckout)
+        contentView.addSubview(buttonCart)
+        contentView.addSubview(buttonCheckout)
         
         let padding:CGFloat = 20
         
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -159,18 +168,13 @@ class ProductDetailsVC: UIViewController, UIGestureRecognizerDelegate {
         ])
         productImage.startAnimatingActivity()
         
+        buttonCheckout.addTarget(self, action: #selector(goToCheckout), for: .touchUpInside)
         
     }
     
     @objc func pressedDone() {
         self.dismiss(animated: true)
     }
-    
-    
-    
-    
-
-    
 
 }
 

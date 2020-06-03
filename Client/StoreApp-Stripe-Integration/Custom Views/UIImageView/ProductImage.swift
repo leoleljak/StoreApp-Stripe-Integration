@@ -44,6 +44,10 @@ class ProductImage: UIImageView {
     }
     
     
+    func changeActivityIndicatorColor(to color:UIColor) {
+        activityIndicator.tintColor = color
+    }
+    
     func stopAnimatingActivity() {
         activityIndicator.stopAnimating()
     }

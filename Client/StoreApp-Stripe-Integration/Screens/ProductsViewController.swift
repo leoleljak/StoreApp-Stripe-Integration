@@ -20,8 +20,11 @@ class ProductsViewController: UIViewController {
         configureCollectionView()
         getProductsData()
         
+      
+        
     }
     
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

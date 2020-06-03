@@ -16,6 +16,10 @@
 		ED2659E62486A1F9003A882D /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659E52486A1F9003A882D /* UIImageView+Ext.swift */; };
 		ED2659E92486A522003A882D /* ProductImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659E82486A522003A882D /* ProductImage.swift */; };
 		ED2659ED2486B694003A882D /* ProductDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659EC2486B694003A882D /* ProductDetailsVC.swift */; };
+		ED2659F22487AB71003A882D /* LLBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659F12487AB71003A882D /* LLBodyLabel.swift */; };
+		ED2659F42487C2FB003A882D /* ShippingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659F32487C2FB003A882D /* ShippingOptions.swift */; };
+		ED2659F72487C5A1003A882D /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659F62487C5A1003A882D /* RadioButton.swift */; };
+		ED2659F92487F787003A882D /* LLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659F82487F787003A882D /* LLButton.swift */; };
 		EDF55CA724865B6D003A023C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF55CA624865B6D003A023C /* AppDelegate.swift */; };
 		EDF55CA924865B6D003A023C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF55CA824865B6D003A023C /* SceneDelegate.swift */; };
 		EDF55CB024865B71003A023C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF55CAF24865B71003A023C /* Assets.xcassets */; };
@@ -35,6 +39,10 @@
 		ED2659E52486A1F9003A882D /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 		ED2659E82486A522003A882D /* ProductImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImage.swift; sourceTree = "<group>"; };
 		ED2659EC2486B694003A882D /* ProductDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsVC.swift; sourceTree = "<group>"; };
+		ED2659F12487AB71003A882D /* LLBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLBodyLabel.swift; sourceTree = "<group>"; };
+		ED2659F32487C2FB003A882D /* ShippingOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShippingOptions.swift; sourceTree = "<group>"; };
+		ED2659F62487C5A1003A882D /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		ED2659F82487F787003A882D /* LLButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLButton.swift; sourceTree = "<group>"; };
 		EDF55CA324865B6D003A023C /* StoreApp-Stripe-Integration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StoreApp-Stripe-Integration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF55CA624865B6D003A023C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDF55CA824865B6D003A023C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +70,7 @@
 			children = (
 				EDF55CBC24866008003A023C /* LLConstants.swift */,
 				ED2659D024867D25003A882D /* Product.swift */,
+				ED2659F32487C2FB003A882D /* ShippingOptions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -87,6 +96,7 @@
 		ED2659D6248680E1003A882D /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				ED2659F52487C574003A882D /* UIButtons */,
 				ED2659E72486A506003A882D /* UIImageView */,
 				ED2659DC24868357003A882D /* Labels */,
 				ED2659D7248680E7003A882D /* Cells */,
@@ -106,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				ED2659DD24868383003A882D /* LLTitleLabel.swift */,
+				ED2659F12487AB71003A882D /* LLBodyLabel.swift */,
 			);
 			path = Labels;
 			sourceTree = "<group>";
@@ -161,6 +172,15 @@
 				ED2659EC2486B694003A882D /* ProductDetailsVC.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		ED2659F52487C574003A882D /* UIButtons */ = {
+			isa = PBXGroup;
+			children = (
+				ED2659F62487C5A1003A882D /* RadioButton.swift */,
+				ED2659F82487F787003A882D /* LLButton.swift */,
+			);
+			path = UIButtons;
 			sourceTree = "<group>";
 		};
 		EDF55C9A24865B6D003A023C = {
@@ -270,12 +290,16 @@
 				EDF55CBB24865E61003A023C /* ProductsViewController.swift in Sources */,
 				ED2659E124869967003A882D /* Networker.swift in Sources */,
 				EDF55CBF24866143003A023C /* CartViewController.swift in Sources */,
+				ED2659F92487F787003A882D /* LLButton.swift in Sources */,
 				EDF55CA924865B6D003A023C /* SceneDelegate.swift in Sources */,
+				ED2659F22487AB71003A882D /* LLBodyLabel.swift in Sources */,
 				ED2659E62486A1F9003A882D /* UIImageView+Ext.swift in Sources */,
+				ED2659F72487C5A1003A882D /* RadioButton.swift in Sources */,
 				ED2659D124867D25003A882D /* Product.swift in Sources */,
 				ED2659DE24868383003A882D /* LLTitleLabel.swift in Sources */,
 				ED2659DA24868103003A882D /* ProductCollectionViewCell.swift in Sources */,
 				ED2659D52486800B003A882D /* UIHelper.swift in Sources */,
+				ED2659F42487C2FB003A882D /* ShippingOptions.swift in Sources */,
 				ED2659E92486A522003A882D /* ProductImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

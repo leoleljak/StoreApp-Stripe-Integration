@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB7841B7CD8D8B7E4F3027A4 /* Pods_StoreApp_Stripe_Integration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAEE23B700B518D98458304E /* Pods_StoreApp_Stripe_Integration.framework */; };
 		ED2659D124867D25003A882D /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659D024867D25003A882D /* Product.swift */; };
 		ED2659D52486800B003A882D /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659D42486800B003A882D /* UIHelper.swift */; };
 		ED2659DA24868103003A882D /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659D824868103003A882D /* ProductCollectionViewCell.swift */; };
@@ -21,6 +22,8 @@
 		ED2659F72487C5A1003A882D /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659F62487C5A1003A882D /* RadioButton.swift */; };
 		ED2659F92487F787003A882D /* LLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659F82487F787003A882D /* LLButton.swift */; };
 		ED2659FB2487FF30003A882D /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659FA2487FF30003A882D /* CheckoutVC.swift */; };
+		ED2659FD2488170F003A882D /* PaymentIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659FC2488170F003A882D /* PaymentIntent.swift */; };
+		ED2659FF248818BC003A882D /* LLError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659FE248818BC003A882D /* LLError.swift */; };
 		EDF55CA724865B6D003A023C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF55CA624865B6D003A023C /* AppDelegate.swift */; };
 		EDF55CA924865B6D003A023C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF55CA824865B6D003A023C /* SceneDelegate.swift */; };
 		EDF55CB024865B71003A023C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF55CAF24865B71003A023C /* Assets.xcassets */; };
@@ -31,6 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44E285F1B3CF15F539107176 /* Pods-StoreApp-Stripe-Integration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoreApp-Stripe-Integration.release.xcconfig"; path = "Target Support Files/Pods-StoreApp-Stripe-Integration/Pods-StoreApp-Stripe-Integration.release.xcconfig"; sourceTree = "<group>"; };
+		819EFCDB38AF6B86C39395CE /* Pods-StoreApp-Stripe-Integration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoreApp-Stripe-Integration.debug.xcconfig"; path = "Target Support Files/Pods-StoreApp-Stripe-Integration/Pods-StoreApp-Stripe-Integration.debug.xcconfig"; sourceTree = "<group>"; };
+		BAEE23B700B518D98458304E /* Pods_StoreApp_Stripe_Integration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StoreApp_Stripe_Integration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED2659D024867D25003A882D /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		ED2659D42486800B003A882D /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		ED2659D824868103003A882D /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -45,6 +51,8 @@
 		ED2659F62487C5A1003A882D /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		ED2659F82487F787003A882D /* LLButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLButton.swift; sourceTree = "<group>"; };
 		ED2659FA2487FF30003A882D /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
+		ED2659FC2488170F003A882D /* PaymentIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentIntent.swift; sourceTree = "<group>"; };
+		ED2659FE248818BC003A882D /* LLError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLError.swift; sourceTree = "<group>"; };
 		EDF55CA324865B6D003A023C /* StoreApp-Stripe-Integration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StoreApp-Stripe-Integration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF55CA624865B6D003A023C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDF55CA824865B6D003A023C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,18 +69,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB7841B7CD8D8B7E4F3027A4 /* Pods_StoreApp_Stripe_Integration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B3EB63BBE87A46479D7D427 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BAEE23B700B518D98458304E /* Pods_StoreApp_Stripe_Integration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D7A142FB294089A919A8A97E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				819EFCDB38AF6B86C39395CE /* Pods-StoreApp-Stripe-Integration.debug.xcconfig */,
+				44E285F1B3CF15F539107176 /* Pods-StoreApp-Stripe-Integration.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		ED2659CF24867D15003A882D /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				EDF55CBC24866008003A023C /* LLConstants.swift */,
 				ED2659D024867D25003A882D /* Product.swift */,
 				ED2659F32487C2FB003A882D /* ShippingOptions.swift */,
+				ED2659FC2488170F003A882D /* PaymentIntent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -91,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				ED2659D42486800B003A882D /* UIHelper.swift */,
+				ED2659FE248818BC003A882D /* LLError.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -191,6 +219,8 @@
 			children = (
 				EDF55CA524865B6D003A023C /* StoreApp-Stripe-Integration */,
 				EDF55CA424865B6D003A023C /* Products */,
+				D7A142FB294089A919A8A97E /* Pods */,
+				5B3EB63BBE87A46479D7D427 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -223,9 +253,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDF55CB724865B71003A023C /* Build configuration list for PBXNativeTarget "StoreApp-Stripe-Integration" */;
 			buildPhases = (
+				90C9DAAD838E17BF47EA91D2 /* [CP] Check Pods Manifest.lock */,
 				EDF55C9F24865B6D003A023C /* Sources */,
 				EDF55CA024865B6D003A023C /* Frameworks */,
 				EDF55CA124865B6D003A023C /* Resources */,
+				F8B15F6B02661025B1FF4A8D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -281,6 +313,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		90C9DAAD838E17BF47EA91D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StoreApp-Stripe-Integration-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8B15F6B02661025B1FF4A8D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StoreApp-Stripe-Integration/Pods-StoreApp-Stripe-Integration-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StoreApp-Stripe-Integration/Pods-StoreApp-Stripe-Integration-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StoreApp-Stripe-Integration/Pods-StoreApp-Stripe-Integration-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EDF55C9F24865B6D003A023C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -288,6 +362,7 @@
 			files = (
 				ED2659FB2487FF30003A882D /* CheckoutVC.swift in Sources */,
 				ED2659E3248699FA003A882D /* NetworkManager.swift in Sources */,
+				ED2659FF248818BC003A882D /* LLError.swift in Sources */,
 				ED2659ED2486B694003A882D /* ProductDetailsVC.swift in Sources */,
 				EDF55CA724865B6D003A023C /* AppDelegate.swift in Sources */,
 				EDF55CBD24866008003A023C /* LLConstants.swift in Sources */,
@@ -296,6 +371,7 @@
 				EDF55CBF24866143003A023C /* CartViewController.swift in Sources */,
 				ED2659F92487F787003A882D /* LLButton.swift in Sources */,
 				EDF55CA924865B6D003A023C /* SceneDelegate.swift in Sources */,
+				ED2659FD2488170F003A882D /* PaymentIntent.swift in Sources */,
 				ED2659F22487AB71003A882D /* LLBodyLabel.swift in Sources */,
 				ED2659E62486A1F9003A882D /* UIImageView+Ext.swift in Sources */,
 				ED2659F72487C5A1003A882D /* RadioButton.swift in Sources */,
@@ -438,6 +514,7 @@
 		};
 		EDF55CB824865B71003A023C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 819EFCDB38AF6B86C39395CE /* Pods-StoreApp-Stripe-Integration.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -457,6 +534,7 @@
 		};
 		EDF55CB924865B71003A023C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44E285F1B3CF15F539107176 /* Pods-StoreApp-Stripe-Integration.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

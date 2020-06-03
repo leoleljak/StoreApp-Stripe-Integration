@@ -26,4 +26,24 @@ struct NetworkManager {
         
     }
     
+    
+    func getPaymentIntent(for data: [String: Any], completionHandler: @escaping(Result<PaymentIntent, LLNetworkError>) -> Void){
+        Networker.shared.performPOSTRequest(urlString: "\(Constants.API_URL)stripe.php", jsonData: data) { result in
+            
+            switch result {
+            case .success(let data):
+                do{
+                let clientSecret = try self.decoder.decode(PaymentIntent.self, from: data)
+                    completionHandler(.success(clientSecret))
+                }catch{
+                    completionHandler(.failure(.decodingFailure))
+                }
+            case .failure(let error):
+                completionHandler(.failure(error))
+            }
+            
+            
+        }
+    }
+    
 }

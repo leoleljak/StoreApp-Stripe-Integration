@@ -6,12 +6,13 @@
 //  Copyright © 2020 Leo Leljak. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 struct NetworkManager {
     static let shared = NetworkManager()
     let decoder = JSONDecoder()
+    
     
     func getProducts(completionHandler: @escaping(Result<[Product], Error>) -> Void){
         Networker.shared.performRequest(urlString: "\(Constants.API_URL)products.php") { (data) in

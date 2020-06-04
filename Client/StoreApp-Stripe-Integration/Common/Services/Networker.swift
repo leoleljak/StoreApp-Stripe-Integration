@@ -6,10 +6,11 @@
 //  Copyright © 2020 Leo Leljak. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Networker {
     static let shared = Networker()
+    let cache = NSCache<NSString, UIImage>()
     
     #warning("Proslijediti već napravljeni URL")
     func performRequest(urlString: String, completionHandler: @escaping (Data)->Void) {

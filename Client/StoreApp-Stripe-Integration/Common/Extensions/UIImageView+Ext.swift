@@ -15,14 +15,26 @@ extension ProductImage {
         guard let url = URL(string: url) else {
             return
         }
+        let cacheString = NSString(string: url.absoluteString)
+        if let imageFromCache = Networker.shared.cache.object(forKey: cacheString) {
+            self.image = imageFromCache
+            self.stopAnimatingActivity()
+            return
+        }
         
         Networker.shared.performRequest(urlString: url.absoluteString) { (data) in
             DispatchQueue.main.async {
-                self.image = UIImage(data: data)
+                guard let image = UIImage(data: data) else {
+                    return
+                }
+                self.image = image
+                Networker.shared.cache.setObject(image, forKey: cacheString)
                 self.stopAnimatingActivity()
             }
         }
     }
+    
+    
     
     
 }

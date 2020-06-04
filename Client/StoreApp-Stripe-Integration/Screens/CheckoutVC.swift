@@ -12,7 +12,7 @@ import Stripe
 class CheckoutVC: UIViewController {
     
     var cardTextField: STPPaymentCardTextField!
-    var buttonPay: LLButton!
+    var buttonPay = LLButton(backgroundColor: .systemGreen, title: "Pay")
     var shippment: ShippingOptions!
     var product: Product!
     var products: [Product]!
@@ -33,7 +33,6 @@ class CheckoutVC: UIViewController {
         title = "Checkout"
         
         cardTextField = STPPaymentCardTextField(frame: .zero)
-        buttonPay = LLButton(backgroundColor: .systemGreen, title: "Pay")
         buttonPay.addTarget(self, action: #selector(pay), for: .touchUpInside)
     }
     
@@ -88,26 +87,31 @@ class CheckoutVC: UIViewController {
     
     
     @objc private func pay() {
-        guard let paymentIntentClientSecret = clientSecret else {
+        buttonPay.startActivityIndicator()
+        self.buttonPay.changeTitleLabel(to: " ")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            
+            guard let paymentIntentClientSecret = self.clientSecret else {
                 return;
             }
             // Collect card details
-            let cardParams = cardTextField.cardParams
+            let cardParams = self.cardTextField.cardParams
             let paymentMethodParams = STPPaymentMethodParams(card: cardParams, billingDetails: nil, metadata: nil)
             let paymentIntentParams = STPPaymentIntentParams(clientSecret: paymentIntentClientSecret)
             paymentIntentParams.paymentMethodParams = paymentMethodParams
-
+            
             // Submit the payment
             let paymentHandler = STPPaymentHandler.shared()
             paymentHandler.confirmPayment(withParams: paymentIntentParams, authenticationContext: self) { (status, paymentIntent, error) in
                 switch (status) {
                 case .failed:
-                    print("Payment failed")
+                    self.displayAlertOnMainThread(for: .error)
                     break
                 case .canceled:
                     print("Payment Canceled")
                     break
                 case .succeeded:
+                    self.displayAlertOnMainThread(for: .success)
                     print("Payment Succeeded")
                     break
                 @unknown default:
@@ -115,7 +119,11 @@ class CheckoutVC: UIViewController {
                     break
                 }
             }
+            self.buttonPay.stopActivityIndicator()
+            self.buttonPay.changeTitleLabel(to: "Pay")
         }
+        
+    }
     
 }
 

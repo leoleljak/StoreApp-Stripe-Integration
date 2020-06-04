@@ -24,7 +24,7 @@ extension ProductImage {
         
         Networker.shared.performRequest(urlString: url.absoluteString) { (data) in
             DispatchQueue.main.async {
-                guard let image = UIImage(data: data) else {
+                guard let image = UIImage(data: data)  else {
                     return
                 }
                 self.image = image

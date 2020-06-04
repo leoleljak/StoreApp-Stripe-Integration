@@ -32,6 +32,24 @@ class ProductCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         productImageView.image = nil
+        priceLabel.text = ""
+        nameLabel.text = ""
+        
+    }
+    
+    
+    func set(with product: Product, for indexPath:IndexPath) {
+        self.nameLabel.text = product.name
+        self.priceLabel.text = "\(product.price)€"
+        self.productImageView.startAnimatingActivity()
+        
+        NetworkManager.shared.downloadPicture(fromUrl: product.imageUrl) { (image) in
+            guard let image = image else { return }
+            if (self.tag == indexPath.row) {
+                self.productImageView.image = image
+                self.productImageView.stopAnimatingActivity()
+            }
+        }
     }
     
     private func configureStackView() {

@@ -37,6 +37,7 @@ struct NetworkManager {
                 let clientSecret = try self.decoder.decode(PaymentIntent.self, from: data)
                     completionHandler(.success(clientSecret))
                 }catch{
+                    print(error)
                     completionHandler(.failure(.decodingFailure))
                 }
             case .failure(let error):
@@ -44,6 +45,27 @@ struct NetworkManager {
             }
             
             
+        }
+    }
+    
+    func downloadPicture(fromUrl url: String, completionHandler: @escaping(UIImage?) -> Void ) {
+        guard let url = URL(string: url) else {
+            return
+        }
+        let cacheString = NSString(string: url.absoluteString)
+        if let imageFromCache = Networker.shared.cache.object(forKey: cacheString) {
+            completionHandler(imageFromCache)
+            return
+        }
+        
+        Networker.shared.performRequest(urlString: url.absoluteString) { (data) in
+            DispatchQueue.main.async {
+                guard let image = UIImage(data: data)  else {
+                    return
+                }
+                Networker.shared.cache.setObject(image, forKey: cacheString)
+                completionHandler(image)
+            }
         }
     }
     

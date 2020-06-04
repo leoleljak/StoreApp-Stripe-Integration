@@ -20,8 +20,6 @@ class ProductsViewController: UIViewController {
         configureCollectionView()
         getProductsData()
         
-      
-        
     }
     
 
@@ -84,16 +82,15 @@ extension ProductsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as? ProductCollectionViewCell
-        cell?.productImageView.image = nil
-        cell?.productImageView.startAnimatingActivity()
+        cell?.tag = indexPath.row
         
         let product = productDataSource[indexPath.row]
-        cell?.nameLabel.text = product.name
-        cell?.priceLabel.text = "\(product.price)€"
-        cell?.productImageView.setPicture(fromUrl: product.imageUrl)
-
+        
+        cell?.set(with: product, for: indexPath)
         return cell!
     }
+    
+    
     
 }
 

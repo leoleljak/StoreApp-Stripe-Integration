@@ -37,6 +37,7 @@ class ProductsViewController: UIViewController {
         NetworkManager.shared.getProducts { result in
             switch result {
             case .success(let products):
+                self.productDataSource.removeAll()
                 self.productDataSource = products
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()

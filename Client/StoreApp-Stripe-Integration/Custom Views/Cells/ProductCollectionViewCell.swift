@@ -29,6 +29,11 @@ class ProductCollectionViewCell: UICollectionViewCell {
     }
     
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        productImageView.image = nil
+    }
+    
     private func configureStackView() {
         stackView.axis = .horizontal
         stackView.distribution = .equalSpacing

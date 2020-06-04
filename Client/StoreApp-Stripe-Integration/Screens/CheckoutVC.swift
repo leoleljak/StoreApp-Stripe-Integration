@@ -88,6 +88,7 @@ class CheckoutVC: UIViewController {
     
     @objc private func pay() {
         buttonPay.startActivityIndicator()
+        cardTextField.resignFirstResponder()
         self.buttonPay.changeTitleLabel(to: " ")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             

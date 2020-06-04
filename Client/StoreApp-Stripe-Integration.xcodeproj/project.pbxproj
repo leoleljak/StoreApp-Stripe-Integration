@@ -24,6 +24,8 @@
 		ED2659FB2487FF30003A882D /* CheckoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659FA2487FF30003A882D /* CheckoutVC.swift */; };
 		ED2659FD2488170F003A882D /* PaymentIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659FC2488170F003A882D /* PaymentIntent.swift */; };
 		ED2659FF248818BC003A882D /* LLError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2659FE248818BC003A882D /* LLError.swift */; };
+		ED265A02248953B4003A882D /* LLCentralAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED265A01248953B4003A882D /* LLCentralAlertVC.swift */; };
+		ED265A04248955A8003A882D /* ViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED265A03248955A8003A882D /* ViewController+Ext.swift */; };
 		EDF55CA724865B6D003A023C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF55CA624865B6D003A023C /* AppDelegate.swift */; };
 		EDF55CA924865B6D003A023C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF55CA824865B6D003A023C /* SceneDelegate.swift */; };
 		EDF55CB024865B71003A023C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDF55CAF24865B71003A023C /* Assets.xcassets */; };
@@ -53,6 +55,8 @@
 		ED2659FA2487FF30003A882D /* CheckoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutVC.swift; sourceTree = "<group>"; };
 		ED2659FC2488170F003A882D /* PaymentIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentIntent.swift; sourceTree = "<group>"; };
 		ED2659FE248818BC003A882D /* LLError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLError.swift; sourceTree = "<group>"; };
+		ED265A01248953B4003A882D /* LLCentralAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLCentralAlertVC.swift; sourceTree = "<group>"; };
+		ED265A03248955A8003A882D /* ViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Ext.swift"; sourceTree = "<group>"; };
 		EDF55CA324865B6D003A023C /* StoreApp-Stripe-Integration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StoreApp-Stripe-Integration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF55CA624865B6D003A023C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDF55CA824865B6D003A023C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 		ED2659D6248680E1003A882D /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				ED265A0024895379003A882D /* ViewControllers */,
 				ED2659F52487C574003A882D /* UIButtons */,
 				ED2659E72486A506003A882D /* UIImageView */,
 				ED2659DC24868357003A882D /* Labels */,
@@ -164,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				ED2659E52486A1F9003A882D /* UIImageView+Ext.swift */,
+				ED265A03248955A8003A882D /* ViewController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -212,6 +218,14 @@
 				ED2659F82487F787003A882D /* LLButton.swift */,
 			);
 			path = UIButtons;
+			sourceTree = "<group>";
+		};
+		ED265A0024895379003A882D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				ED265A01248953B4003A882D /* LLCentralAlertVC.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		EDF55C9A24865B6D003A023C = {
@@ -373,11 +387,13 @@
 				EDF55CA924865B6D003A023C /* SceneDelegate.swift in Sources */,
 				ED2659FD2488170F003A882D /* PaymentIntent.swift in Sources */,
 				ED2659F22487AB71003A882D /* LLBodyLabel.swift in Sources */,
+				ED265A02248953B4003A882D /* LLCentralAlertVC.swift in Sources */,
 				ED2659E62486A1F9003A882D /* UIImageView+Ext.swift in Sources */,
 				ED2659F72487C5A1003A882D /* RadioButton.swift in Sources */,
 				ED2659D124867D25003A882D /* Product.swift in Sources */,
 				ED2659DE24868383003A882D /* LLTitleLabel.swift in Sources */,
 				ED2659DA24868103003A882D /* ProductCollectionViewCell.swift in Sources */,
+				ED265A04248955A8003A882D /* ViewController+Ext.swift in Sources */,
 				ED2659D52486800B003A882D /* UIHelper.swift in Sources */,
 				ED2659F42487C2FB003A882D /* ShippingOptions.swift in Sources */,
 				ED2659E92486A522003A882D /* ProductImage.swift in Sources */,

@@ -23,7 +23,7 @@ class CheckoutVC: UIViewController {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        getPaymentIntent()
+        //getPaymentIntent()
         configure()
         layoutUI()
     }
@@ -58,7 +58,7 @@ class CheckoutVC: UIViewController {
     }
     
     
-    private func getPaymentIntent() {
+    func getPaymentIntent(onCompletion: @escaping(Result<PaymentIntent?, Error>) -> Void) {
         var productsInCart = [Int]()
         if product != nil {
             productsInCart.append(product.id)
@@ -77,11 +77,10 @@ class CheckoutVC: UIViewController {
             switch result {
             case .success(let paymentIntent):
                 self.clientSecret = paymentIntent.clientSecret
+                onCompletion(.success(paymentIntent))
             case .failure(let error):
                 print(error)
-                DispatchQueue.main.async {
-                    self.dismiss(animated: true, completion: nil)
-                }
+                onCompletion(.failure(error))
                 
             }
         }

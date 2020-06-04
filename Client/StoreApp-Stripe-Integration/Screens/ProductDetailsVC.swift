@@ -73,6 +73,8 @@ class ProductDetailsVC: UIViewController, UIGestureRecognizerDelegate {
     @objc func goToCheckout() {
         print("Pressed")
         let checkoutVC = CheckoutVC()
+        checkoutVC.product = self.product
+        checkoutVC.shippment = radioButtonUPS.isSelected ? ShippingOptions.UPS : ShippingOptions.DHL
         navigationController?.pushViewController(checkoutVC, animated: true)
     }
     

@@ -9,7 +9,7 @@
 import UIKit
 
 class ProductDetailsVC: UIViewController, UIGestureRecognizerDelegate {
-
+    
     let productImage = ProductImage(frame: .zero)
     var scrollView: UIScrollView!
     let contentView = UIView(frame: .zero)
@@ -48,7 +48,7 @@ class ProductDetailsVC: UIViewController, UIGestureRecognizerDelegate {
         
         scrollView = UIScrollView(frame: view.bounds)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-
+        
         let barItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(pressedDone))
         navigationItem.rightBarButtonItem = barItem
         productImage.changeActivityIndicatorColor(to: .blue)
@@ -63,7 +63,37 @@ class ProductDetailsVC: UIViewController, UIGestureRecognizerDelegate {
         radioButtonUPS.delegate = self
         radioButtonDHL.delegate = self
         
-
+        
+        
+        
+        
+    }
+    
+    
+    @objc func goToCheckout() {
+        print("Pressed")
+        buttonCheckout.startActivityIndicator()
+        buttonCheckout.changeTitleLabel(to: " ")
+        let checkoutVC = CheckoutVC()
+        checkoutVC.product = self.product
+        checkoutVC.shippment = radioButtonUPS.isSelected ? ShippingOptions.UPS : ShippingOptions.DHL
+        checkoutVC.getPaymentIntent { (result) in
+            switch result {
+                
+            case .success(_):
+                DispatchQueue.main.async {
+                    self.navigationController?.pushViewController(checkoutVC, animated: true)
+                    self.buttonCheckout.stopActivityIndicator()
+                    self.buttonCheckout.changeTitleLabel(to: "Checkout")
+                }
+                
+            case .failure(_):
+                #warning("Staviti error VC")
+                self.buttonCheckout.changeTitleLabel(to: "Checkout")
+                print("ERROR")
+            }
+        }
+        
         
     }
     
@@ -90,13 +120,13 @@ class ProductDetailsVC: UIViewController, UIGestureRecognizerDelegate {
         shippingContentView.addSubview(radioButtonDHL)
         shippingContentView.addSubview(labelUPS)
         shippingContentView.addSubview(labelDHL)
-        shippingContentView.addSubview(buttonCart)
-        shippingContentView.addSubview(buttonCheckout)
+        contentView.addSubview(buttonCart)
+        contentView.addSubview(buttonCheckout)
         
         let padding:CGFloat = 20
         
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -155,10 +185,11 @@ class ProductDetailsVC: UIViewController, UIGestureRecognizerDelegate {
             buttonCheckout.topAnchor.constraint(equalTo: buttonCart.topAnchor),
             buttonCheckout.trailingAnchor.constraint(equalTo: shippingContentView.trailingAnchor),
             buttonCheckout.heightAnchor.constraint(equalToConstant: 50)
-
+            
         ])
         productImage.startAnimatingActivity()
         
+        buttonCheckout.addTarget(self, action: #selector(goToCheckout), for: .touchUpInside)
         
     }
     
@@ -166,12 +197,6 @@ class ProductDetailsVC: UIViewController, UIGestureRecognizerDelegate {
         self.dismiss(animated: true)
     }
     
-    
-    
-    
-
-    
-
 }
 
 extension ProductDetailsVC: RadioButtonDelegate {

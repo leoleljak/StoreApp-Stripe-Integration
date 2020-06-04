@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "9EB4A380-4B51-440E-8C59-FDD8DC8AE70B"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "918A7EA6-A179-43D7-AD4E-B52184017D2D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StoreApp-Stripe-Integration/Screens/CheckoutVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "getPaymentIntent(onCompletion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "918A7EA6-A179-43D7-AD4E-B52184017D2D - b5cb868c9d0a096"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StoreApp_Stripe_Integration.CheckoutVC.(getPaymentIntent in _CA0A4D1C941F88004E0DE20C05644A8E)() -&gt; ()"
+                  moduleName = "StoreApp-Stripe-Integration"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lleljak/Documents/iOS%20development/MyProjects/StoreApp-Stripe-Integration/Client/StoreApp-Stripe-Integration/Screens/CheckoutVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "2167">
+               </Location>
+               <Location
+                  uuid = "918A7EA6-A179-43D7-AD4E-B52184017D2D - f1e5bac60394c74f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;StoreApp_Stripe_Integration.PaymentIntent, StoreApp_Stripe_Integration.LLNetworkError&gt;) -&gt; () in StoreApp_Stripe_Integration.CheckoutVC.(getPaymentIntent in _CA0A4D1C941F88004E0DE20C05644A8E)() -&gt; ()"
+                  moduleName = "StoreApp-Stripe-Integration"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lleljak/Documents/iOS%20development/MyProjects/StoreApp-Stripe-Integration/Client/StoreApp-Stripe-Integration/Screens/CheckoutVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "175">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6AFDF8BA-3FB0-4891-9629-55B7605B821C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StoreApp-Stripe-Integration/Screens/CheckoutVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "getPaymentIntent(onCompletion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1CB6BBBD-6771-4174-9D89-53ABDF5E6679"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StoreApp-Stripe-Integration/Screens/CheckoutVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "getPaymentIntent(onCompletion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "00B55996-0495-4CD8-9F04-7C8A9BAFE990"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StoreApp-Stripe-Integration/Screens/CheckoutVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "getPaymentIntent(onCompletion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "678FA525-FFB4-479D-A548-3D5C3BCB5726"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StoreApp-Stripe-Integration/Common/Services/Networker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "performPOSTRequest(urlString:jsonData:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "425BAFBF-1F96-4F27-8555-C776ED92FE8C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StoreApp-Stripe-Integration/Screens/ProductsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "getProductsData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "51FE2808-B511-4E3C-BD26-D7B62925E952"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StoreApp-Stripe-Integration/Custom Views/UIButtons/LLButton.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "configure()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EEF96C1E-BC9E-4854-9AE8-407446C29606"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StoreApp-Stripe-Integration/Custom Views/UIButtons/LLButton.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "configure()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F5864740-9934-4145-9661-FEE801E222B6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StoreApp-Stripe-Integration/Custom Views/UIButtons/LLButton.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "configure()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "58595745-1336-446D-924B-F9A22D618717"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StoreApp-Stripe-Integration/Custom Views/UIButtons/LLButton.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "configure()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

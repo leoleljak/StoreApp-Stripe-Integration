@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Stripe
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -21,6 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.rootViewController = createTabBar()
         window?.makeKeyAndVisible()
+        
+        Stripe.setDefaultPublishableKey("pk_test_6WrxBH8OoVcqJpnFd2DWjvEQ000qy5XocX")
         
     }
 

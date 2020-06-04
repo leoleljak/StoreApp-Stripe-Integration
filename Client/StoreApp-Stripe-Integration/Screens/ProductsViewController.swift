@@ -20,8 +20,6 @@ class ProductsViewController: UIViewController {
         configureCollectionView()
         getProductsData()
         
-      
-        
     }
     
 
@@ -37,6 +35,7 @@ class ProductsViewController: UIViewController {
         NetworkManager.shared.getProducts { result in
             switch result {
             case .success(let products):
+                self.productDataSource.removeAll()
                 self.productDataSource = products
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
@@ -83,16 +82,15 @@ extension ProductsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as? ProductCollectionViewCell
-        cell?.productImageView.image = nil
-        cell?.productImageView.startAnimatingActivity()
+        cell?.tag = indexPath.row
         
         let product = productDataSource[indexPath.row]
-        cell?.nameLabel.text = product.name
-        cell?.priceLabel.text = "\(product.price)€"
-        cell?.productImageView.setPicture(fromUrl: product.imageUrl)
-
+        
+        cell?.set(with: product, for: indexPath)
         return cell!
     }
+    
+    
     
 }
 

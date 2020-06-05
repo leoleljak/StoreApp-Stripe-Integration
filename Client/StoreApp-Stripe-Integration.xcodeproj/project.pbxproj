@@ -57,7 +57,7 @@
 		ED2659FE248818BC003A882D /* LLError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLError.swift; sourceTree = "<group>"; };
 		ED265A01248953B4003A882D /* LLCentralAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLCentralAlertVC.swift; sourceTree = "<group>"; };
 		ED265A03248955A8003A882D /* ViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Ext.swift"; sourceTree = "<group>"; };
-		EDF55CA324865B6D003A023C /* StoreApp-Stripe-Integration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StoreApp-Stripe-Integration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDF55CA324865B6D003A023C /* StoreApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDF55CA624865B6D003A023C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDF55CA824865B6D003A023C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EDF55CAF24865B71003A023C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -241,7 +241,7 @@
 		EDF55CA424865B6D003A023C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EDF55CA324865B6D003A023C /* StoreApp-Stripe-Integration.app */,
+				EDF55CA324865B6D003A023C /* StoreApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -279,7 +279,7 @@
 			);
 			name = "StoreApp-Stripe-Integration";
 			productName = "StoreApp-Stripe-Integration";
-			productReference = EDF55CA324865B6D003A023C /* StoreApp-Stripe-Integration.app */;
+			productReference = EDF55CA324865B6D003A023C /* StoreApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -542,7 +542,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.leoleljak.StoreApp-Stripe-Integration";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = StoreApp;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -562,7 +562,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.leoleljak.StoreApp-Stripe-Integration";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = StoreApp;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

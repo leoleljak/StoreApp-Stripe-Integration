@@ -1,7 +1,7 @@
 # Integration Of Stripe Payment in Demo StoreApp
 > Project consists of Server side written in PHP (with mySQL database) and Client (iOS app) which is listing Products from Server and you can pay for the product through integrated Stripe Payment
 
-[![Swift Version][swift-image]][https://img.shields.io/badge/language-Swift_5.1-orange.svg]
+[![Swift Version][https://img.shields.io/badge/language-Swift_5.1-orange.svg]][https://img.shields.io/badge/language-Swift_5.1-orange.svg]
 [![Build Status][travis-image]][travis-url]
 [![License][license-image]][license-url]
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)

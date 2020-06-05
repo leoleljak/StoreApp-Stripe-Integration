@@ -32,6 +32,7 @@ class LLBodyLabel: UILabel {
         textColor = fontColor
     }
     
+    
     convenience init(fontSize: CGFloat, fontColor: UIColor, weight: UIFont.Weight) {
         self.init(fontSize: fontSize)
         font = UIFont.systemFont(ofSize: fontSize, weight: weight)

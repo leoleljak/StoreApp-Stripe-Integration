@@ -9,20 +9,22 @@
 import UIKit
 
 class ProductsViewController: UIViewController {
-
+    
     var collectionView: UICollectionView!
     var productDataSource = [Product]()
+    let refreshControl = UIRefreshControl()
+    var doneFirstLoad: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        
         configureNavBar()
         configureCollectionView()
         getProductsData()
         
     }
     
-
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -37,9 +39,7 @@ class ProductsViewController: UIViewController {
             case .success(let products):
                 self.productDataSource.removeAll()
                 self.productDataSource = products
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
+                self.refreshCollectionView()
                 
             case .failure(let error):
                 print(error.localizedDescription)
@@ -49,7 +49,7 @@ class ProductsViewController: UIViewController {
     
     
     private func configureNavBar() {
-        let rightItem = UIBarButtonItem(image: UIImage(systemName: SFSymbols.avatarImage), style: .plain, target: self, action: #selector(avatarSelected))
+        let rightItem = UIBarButtonItem(image: UIImage(systemName: SFSymbols.avatarImage), style: .plain, target: self, action: #selector(profileSelected))
         navigationItem.rightBarButtonItem = rightItem
     }
     
@@ -62,16 +62,36 @@ class ProductsViewController: UIViewController {
         collectionView.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: ProductCollectionViewCell.reuseID)
         collectionView.backgroundColor = .systemBackground
         collectionView.delegate = self
+        refreshControl.addTarget(self, action: #selector(self.refreshProducts), for: .valueChanged)
+        refreshControl.attributedTitle = NSAttributedString(string: "Refresh products", attributes: nil)
+        refreshControl.tintColor = .systemBlue
+        collectionView.refreshControl = refreshControl
         view.addSubview(collectionView)
- 
+        
     }
     
     
-    @objc func avatarSelected() {
-        print("Dummy Avatar Selected")
+    @objc func profileSelected() {
+        displayAlertOnMainThread(for: .custom, autoHide: true, title: "Not yet implemented 😔")
     }
     
-
+    
+    @objc func refreshProducts() {
+        getProductsData()
+    }
+    
+    
+    private func refreshCollectionView() {
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+            guard self.doneFirstLoad else {
+                self.doneFirstLoad.toggle()
+                return
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { self.refreshControl.endRefreshing() }
+        }
+    }
+    
 }
 
 //MARK: - CollectionView DataSource
@@ -81,17 +101,15 @@ extension ProductsViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as? ProductCollectionViewCell
-        cell?.tag = indexPath.row
-        
         let product = productDataSource[indexPath.row]
         
-        cell?.set(with: product, for: indexPath)
-        return cell!
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCell", for: indexPath) as? ProductCollectionViewCell else {
+            return UICollectionViewCell(frame: .zero)
+        }
+        cell.tag = indexPath.row
+        cell.set(with: product, for: indexPath)
+        return cell
     }
-    
-    
-    
 }
 
 
@@ -105,6 +123,5 @@ extension ProductsViewController: UICollectionViewDelegate {
         productDetailVC.product = product
         let navigationVC = UINavigationController(rootViewController: productDetailVC)
         present(navigationVC, animated: true)
-        
     }
 }

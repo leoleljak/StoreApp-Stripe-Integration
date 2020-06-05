@@ -12,21 +12,37 @@ struct Networker {
     static let shared = Networker()
     let cache = NSCache<NSString, UIImage>()
     
-    #warning("Proslijediti već napravljeni URL")
-    func performRequest(urlString: String, completionHandler: @escaping (Data)->Void) {
-        let urlStringWithoutSpace = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        if let url = URL(string: urlStringWithoutSpace){
-            let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url) { (data, response, error) in
-                if error != nil {
-                    print(error!)
-                    return
-                }else if let safeData = data {
-                    completionHandler(safeData)
-                }
-            }
-            task.resume()
+    func performRequest(urlString: String, completionHandler: @escaping (Result<Data, LLNetworkError>)->Void) {
+        guard let urlStringWithoutSpace = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            completionHandler(.failure(.invalidURL))
+            return
         }
+        
+        guard let url = URL(string: urlStringWithoutSpace) else {
+            completionHandler(.failure(.invalidURL))
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if error != nil {
+                completionHandler(.failure(.networkFailure))
+            }
+            
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                completionHandler(.failure(.invalidResponseServer))
+                return
+            }
+            
+            guard let data = data else {
+                completionHandler(.failure(.invalidData))
+                return
+            }
+            
+            completionHandler(.success(data))
+            
+        }
+        
+        task.resume()
     }
     
     

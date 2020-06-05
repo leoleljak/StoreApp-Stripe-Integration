@@ -14,6 +14,11 @@
             echo json_encode($results, JSON_NUMERIC_CHECK);
         }
 
+        static function getProductsForSearch() {
+            $results = DB::query("SELECT * FROM Products");
+            return $results;
+        }
+
     }
 
     

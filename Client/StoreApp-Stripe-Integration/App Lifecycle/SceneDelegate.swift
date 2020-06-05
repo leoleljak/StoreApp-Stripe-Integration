@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = createTabBar()
         window?.makeKeyAndVisible()
         
-        Stripe.setDefaultPublishableKey("pk_test_6WrxBH8OoVcqJpnFd2DWjvEQ000qy5XocX")
+        Stripe.setDefaultPublishableKey(Constants.API_KEY)
         
     }
 

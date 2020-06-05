@@ -25,6 +25,7 @@ enum Constants {
     static let storeTitle = "Store"
     static let cartTitle = "Cart"
     static let API_URL = "http://192.168.1.8/api/"
+    static let API_KEY = "REPLACE WITH STRIPE PUBLISHABLE API KEY"
     
     static let paymentSuccess = "Payment Suceedded"
     static let paymentFailed = "Payment Failed"

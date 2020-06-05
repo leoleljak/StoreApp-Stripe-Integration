@@ -17,15 +17,10 @@ class RadioButton: UIControl, RadioButtonDelegate {
     
     var radioImage = UIImageView()
     var delegate: RadioButtonDelegate?
-    
-    @objc func onClick(_ sender: UIView) {
-        delegate?.onClick(self)
-    }
-    
 
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
     }
     
     
@@ -38,6 +33,11 @@ class RadioButton: UIControl, RadioButtonDelegate {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    @objc func onClick(_ sender: UIView) {
+        delegate?.onClick(self)
     }
     
     
@@ -59,9 +59,6 @@ class RadioButton: UIControl, RadioButtonDelegate {
         self.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
         UIView.animate(withDuration: 0.5) {
             self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-            
-            
-            
             self.radioImage.image = UIImage(named: RadioStates.radioChecked.rawValue)
         }
     }
@@ -78,7 +75,6 @@ class RadioButton: UIControl, RadioButtonDelegate {
         addTarget(self, action: #selector(onClick(_:)), for: .touchUpInside)
         
         radioImage.image = UIImage(named: status.rawValue)
-        
     }
     
     

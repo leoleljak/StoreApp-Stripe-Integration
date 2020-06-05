@@ -1,5 +1,5 @@
 # Integration Of Stripe Payment in Demo StoreApp
-> Short blurb about what your product does.
+> Project consists of Server side written in PHP (with mySQL database) and Client (iOS app) which is listing Products from Server and you can pay for the product through integrated Stripe Payment
 
 [![Swift Version][swift-image]][swift-url]
 [![Build Status][travis-image]][travis-url]

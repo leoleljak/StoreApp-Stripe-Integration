@@ -55,31 +55,21 @@ class LLButton: UIButton {
             activityIndicator.widthAnchor.constraint(equalToConstant: 20),
             activityIndicator.heightAnchor.constraint(equalToConstant: 20)
         ])
-        
-        
     }
     
     
     func startActivityIndicator() {
-        DispatchQueue.main.async {
-            self.activityIndicator.startAnimating()
-        }
+        DispatchQueue.main.async { self.activityIndicator.startAnimating() }
     }
     
     
     func stopActivityIndicator() {
-        DispatchQueue.main.async {
-            self.activityIndicator.stopAnimating()
-        }
+        DispatchQueue.main.async { self.activityIndicator.stopAnimating() }
     }
     
     
     func changeTitleLabel(to title: String) {
-        DispatchQueue.main.async {
-            self.setTitle(title, for: .normal)
-        }
-        
-        
+        DispatchQueue.main.async { self.setTitle(title, for: .normal) }
     }
     
 }

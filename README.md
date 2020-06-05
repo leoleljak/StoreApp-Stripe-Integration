@@ -2,6 +2,7 @@
 > Project consists of Server side written in PHP (with mySQL database) and Client (iOS app) which is listing Products from Server and you can pay for the product through integrated Stripe Payment
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![Platform](https://img.shields.io/badge/platform-iOS_13-yellow.svg)]()
 
 One to two paragraph statement about your product and what it does.
 

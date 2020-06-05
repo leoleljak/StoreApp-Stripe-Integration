@@ -24,7 +24,7 @@
 
 - Open Stripe account and get your API keys
 - In Client -> Common -> Model -> LLConstants.swift change API keys and Server URL
-- In Server -> ...
+- In Server -> stripe.php -> \Stripe\Stripe::setApiKey('YOUR STRIPE SECRET KEY'); -> Replace Secret Key
 
 ## Contribute
 

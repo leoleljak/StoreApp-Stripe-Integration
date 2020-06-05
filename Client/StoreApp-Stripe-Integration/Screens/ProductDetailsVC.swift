@@ -32,8 +32,8 @@ class ProductDetailsVC: UIViewController, UIGestureRecognizerDelegate {
         configure()
         layoutUI()
         fillData()
-        
     }
+    
     
     @objc func proba() {
         print("Proba")
@@ -42,8 +42,6 @@ class ProductDetailsVC: UIViewController, UIGestureRecognizerDelegate {
     
     func configure() {
         title = product.name
-        
-        
         contentView.translatesAutoresizingMaskIntoConstraints = false
         
         scrollView = UIScrollView(frame: view.bounds)
@@ -62,11 +60,6 @@ class ProductDetailsVC: UIViewController, UIGestureRecognizerDelegate {
         radioButtonUPS.changeState()
         radioButtonUPS.delegate = self
         radioButtonDHL.delegate = self
-        
-        
-        
-        
-        
     }
     
     
@@ -86,15 +79,12 @@ class ProductDetailsVC: UIViewController, UIGestureRecognizerDelegate {
                     self.buttonCheckout.stopActivityIndicator()
                     self.buttonCheckout.changeTitleLabel(to: "Checkout")
                 }
-                
             case .failure(_):
-                #warning("Staviti error VC")
+                self.displayAlertOnMainThread(for: .custom, autoHide: false, title: "Can't get payment intent, Try again or check internet connection")
                 self.buttonCheckout.changeTitleLabel(to: "Checkout")
-                print("ERROR")
+                self.buttonCheckout.stopActivityIndicator()
             }
         }
-        
-        
     }
     
     
@@ -108,8 +98,6 @@ class ProductDetailsVC: UIViewController, UIGestureRecognizerDelegate {
     
     
     func layoutUI() {
-        
-        
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.addSubview(productImage)
@@ -188,10 +176,9 @@ class ProductDetailsVC: UIViewController, UIGestureRecognizerDelegate {
             
         ])
         productImage.startAnimatingActivity()
-        
         buttonCheckout.addTarget(self, action: #selector(goToCheckout), for: .touchUpInside)
-        
     }
+    
     
     @objc func pressedDone() {
         self.dismiss(animated: true)
@@ -208,6 +195,5 @@ extension ProductDetailsVC: RadioButtonDelegate {
         }
         radioButtonUPS.changeState()
         radioButtonDHL.changeState()
-        
     }
 }

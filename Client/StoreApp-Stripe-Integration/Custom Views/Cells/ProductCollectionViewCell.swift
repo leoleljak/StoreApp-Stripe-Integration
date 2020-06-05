@@ -9,12 +9,11 @@
 import UIKit
 
 class ProductCollectionViewCell: UICollectionViewCell {
-    static let reuseID = "ProductCell"
+    static let reuseID = ReuseIdentifiers.productCell
     var productImageView = ProductImage(frame: .zero)
     var nameLabel = LLTitleLabel(fontSize: 16, fontColor: .white)
     var priceLabel = LLTitleLabel(fontSize: 16, fontColor: .white)
     let stackView = UIStackView()
-    
     
     
     override init(frame: CGRect) {
@@ -34,7 +33,6 @@ class ProductCollectionViewCell: UICollectionViewCell {
         productImageView.image = nil
         priceLabel.text = ""
         nameLabel.text = ""
-        
     }
     
     
@@ -43,9 +41,21 @@ class ProductCollectionViewCell: UICollectionViewCell {
         self.priceLabel.text = "\(product.price)€"
         self.productImageView.startAnimatingActivity()
         
-        NetworkManager.shared.downloadPicture(fromUrl: product.imageUrl) { (image) in
+        self.productImageView.setPictureForCollectionView(for: product.imageUrl, cell: self, indexPath: indexPath)
+    }
+    
+    
+    private func setPictureForCollectionView(for url: String, cell: UICollectionViewCell, indexPath: IndexPath) {
+        let cacheString = NSString(string: url)
+        if let imageFromCache = Networker.shared.cache.object(forKey: cacheString) {
+            productImageView.image = imageFromCache
+            productImageView.stopAnimatingActivity()
+            return
+        }
+        
+        NetworkManager.shared.downloadPicture(fromUrl: url) { (image) in
             guard let image = image else { return }
-            if (self.tag == indexPath.row) {
+            if (cell.tag == indexPath.row) {
                 self.productImageView.image = image
                 self.productImageView.stopAnimatingActivity()
             }

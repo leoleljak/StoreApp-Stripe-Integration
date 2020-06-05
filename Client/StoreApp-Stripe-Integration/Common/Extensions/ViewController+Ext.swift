@@ -11,9 +11,9 @@ import UIKit
 
 extension UIViewController {
     
-    func displayAlertOnMainThread(for alertType:AlertType){
+    func displayAlertOnMainThread(for alertType:AlertType, autoHide: Bool?, title: String? ){
         DispatchQueue.main.async {
-            let vc = LLCentralAlertVC()
+            let vc = LLCentralAlertVC(autoHide: autoHide, title: title, alertType: alertType)
             vc.modalPresentationStyle = .overFullScreen
             vc.delegate = self as? LLCentralAlertVCDelegate
             vc.set(type: alertType)
@@ -30,6 +30,8 @@ extension UIViewController {
         case .success:
             generator.notificationOccurred(.success)
         case .error:
+            generator.notificationOccurred(.error)
+        case .custom:
             generator.notificationOccurred(.error)
         }
     

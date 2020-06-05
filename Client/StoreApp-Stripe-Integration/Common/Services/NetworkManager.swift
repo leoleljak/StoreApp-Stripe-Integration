@@ -14,14 +14,22 @@ struct NetworkManager {
     let decoder = JSONDecoder()
     
     
-    func getProducts(completionHandler: @escaping(Result<[Product], Error>) -> Void){
-        Networker.shared.performRequest(urlString: "\(Constants.API_URL)products.php") { (data) in
-            do{
-                let products = try self.decoder.decode([Product].self, from: data)
-                completionHandler(.success(products))
-            }catch{
-                completionHandler(.failure(error))
+    func getProducts(completionHandler: @escaping(Result<[Product], LLNetworkError>) -> Void){
+        Networker.shared.performRequest(urlString: "\(Constants.API_URL)products.php") { results in
+            
+            switch results {
+            case .success(let data):
+                do{
+                    let products = try self.decoder.decode([Product].self, from: data)
+                    completionHandler(.success(products))
+                }catch{
+                    completionHandler(.failure(.decodingFailure))
+                }
+            case .failure(_):
+                completionHandler(.failure(.invalidData))
             }
+            
+            
             
         }
         
@@ -58,14 +66,21 @@ struct NetworkManager {
             return
         }
         
-        Networker.shared.performRequest(urlString: url.absoluteString) { (data) in
-            DispatchQueue.main.async {
-                guard let image = UIImage(data: data)  else {
-                    return
+        Networker.shared.performRequest(urlString: url.absoluteString) { (results) in
+            switch results {
+            case .success(let data):
+                DispatchQueue.main.async {
+                    guard let image = UIImage(data: data)  else {
+                        return
+                    }
+                    Networker.shared.cache.setObject(image, forKey: cacheString)
+                    completionHandler(image)
                 }
-                Networker.shared.cache.setObject(image, forKey: cacheString)
-                completionHandler(image)
+            case .failure(_):
+                completionHandler(nil)
             }
+            
+            
         }
     }
     

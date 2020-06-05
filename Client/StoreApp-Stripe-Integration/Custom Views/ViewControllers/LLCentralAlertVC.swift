@@ -9,7 +9,7 @@
 import UIKit
 
 enum AlertType {
-    case success, error
+    case success, error, custom
 }
 
 
@@ -21,9 +21,12 @@ protocol LLCentralAlertVCDelegate: class {
 class LLCentralAlertVC: UIViewController {
     let containerView = UIView(frame: .zero)
     let imageView = UIImageView(frame: .zero)
-    let titleLabel = LLTitleLabel(fontSize: 20, fontColor: .label)
+    let titleLabel = LLTitleLabel(fontSize: 20, fontColor: .label, numberOfLines: 2)
     weak var delegate: LLCentralAlertVCDelegate?
     var currentType: AlertType?
+    
+    var autoHide: Bool = true
+    var customText: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +35,28 @@ class LLCentralAlertVC: UIViewController {
         scheduleDismissSelf()
         layoutUI()
     }
+
+    
+    convenience init(autoHide: Bool?, title: String?, alertType: AlertType) {
+        self.init()
+        if let autohide = autoHide {self.autoHide = autohide}
+        customText = title
+        currentType = alertType
+    }
+    
+    
+    convenience init(alertType: AlertType) {
+        self.init()
+        currentType = alertType
+        
+    }
     
     
     private func scheduleDismissSelf() {
+        guard autoHide == true else {
+            return
+        }
+        
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: false)
     }
     
@@ -46,6 +68,13 @@ class LLCentralAlertVC: UIViewController {
         containerView.layer.cornerRadius = 20
         containerView.translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        containerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissSelf)))
+    }
+    
+    
+    @objc func dismissSelf() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     
@@ -94,6 +123,10 @@ class LLCentralAlertVC: UIViewController {
         case .error:
             imageView.image = UIImage(systemName: SFSymbols.error)
             titleLabel.text = Constants.paymentFailed
+            imageView.tintColor = .systemRed
+        case .custom:
+            imageView.image = UIImage(systemName: SFSymbols.error)
+            titleLabel.text = self.customText
             imageView.tintColor = .systemRed
         }
     }

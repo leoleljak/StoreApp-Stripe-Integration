@@ -106,13 +106,13 @@ class CheckoutVC: UIViewController {
             paymentHandler.confirmPayment(withParams: paymentIntentParams, authenticationContext: self) { (status, paymentIntent, error) in
                 switch (status) {
                 case .failed:
-                    self.displayAlertOnMainThread(for: .error)
+                    self.displayAlertOnMainThread(for: .error, autoHide: true, title: nil)
                     break
                 case .canceled:
                     print("Payment Canceled")
                     break
                 case .succeeded:
-                    self.displayAlertOnMainThread(for: .success)
+                    self.displayAlertOnMainThread(for: .success, autoHide: true, title: nil)
                     print("Payment Succeeded")
                     break
                 @unknown default:
@@ -142,6 +142,8 @@ extension CheckoutVC: LLCentralAlertVCDelegate {
         case .success:
             self.dismiss(animated: true, completion: nil)
         case .error:
+            break
+        case .custom:
             break
         }
     }

@@ -11,8 +11,8 @@ import UIKit
 
 extension ProductImage {
     
-    func setPicture(fromUrl url: String ) {
-        guard let url = URL(string: url) else {
+    func setPicture(fromUrl urlString: String ) {
+        guard let url = URL(string: urlString) else {
             return
         }
         let cacheString = NSString(string: url.absoluteString)
@@ -22,19 +22,31 @@ extension ProductImage {
             return
         }
         
-        Networker.shared.performRequest(urlString: url.absoluteString) { (data) in
-            DispatchQueue.main.async {
-                guard let image = UIImage(data: data)  else {
-                    return
-                }
+        NetworkManager.shared.downloadPicture(fromUrl: urlString) { (image) in
+            guard let image = image  else {
+                return
+            }
+            
+            self.image = image
+            Networker.shared.cache.setObject(image, forKey: cacheString)
+            self.stopAnimatingActivity()
+        }
+    }
+    
+    func setPictureForCollectionView(for url: String, cell: UICollectionViewCell, indexPath: IndexPath) {
+        let cacheString = NSString(string: url)
+        if let imageFromCache = Networker.shared.cache.object(forKey: cacheString) {
+            self.image = imageFromCache
+            self.stopAnimatingActivity()
+            return
+        }
+        
+        NetworkManager.shared.downloadPicture(fromUrl: url) { (image) in
+            guard let image = image else { return }
+            if (cell.tag == indexPath.row) {
                 self.image = image
-                Networker.shared.cache.setObject(image, forKey: cacheString)
                 self.stopAnimatingActivity()
             }
         }
     }
-    
-    
-    
-    
 }

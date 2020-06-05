@@ -32,6 +32,12 @@ class LLTitleLabel: UILabel {
         textColor = fontColor
     }
     
+    convenience init(fontSize: CGFloat, fontColor: UIColor, numberOfLines: Int) {
+        self.init(fontSize: fontSize)
+        textColor = fontColor
+        self.numberOfLines = 2
+    }
+    
     
     private func configure(){
         

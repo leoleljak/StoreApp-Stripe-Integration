@@ -5,7 +5,7 @@
 [![Platform](https://img.shields.io/badge/platform-iOS_13-yellow.svg)]()
 [![Language](https://img.shields.io/badge/language-Swift_5.1-orange.svg)]()
 
-One to two paragraph statement about your product and what it does.
+### If you like the project, please give it a star ⭐ It will show the creator your appreciation and help others to discover the repo.
 
 ![](header.png)
 

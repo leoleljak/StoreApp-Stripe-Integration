@@ -15,7 +15,7 @@ One to two paragraph statement about your product and what it does.
 
 ## Features
 
-- [x] Feature 1
+- [x] Products
 - [x] Feature 2
 - [x] Feature 3
 - [x] Feature 4
@@ -23,8 +23,8 @@ One to two paragraph statement about your product and what it does.
 
 ## Requirements
 
-- iOS 8.0+
-- Xcode 7.3
+- iOS 13.0+
+- Xcode 11.3
 
 ## Installation
 

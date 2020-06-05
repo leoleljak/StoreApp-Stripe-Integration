@@ -8,12 +8,21 @@
 
 import UIKit
 
+enum AlertType {
+    case success, error
+}
+
+
+protocol LLCentralAlertVCDelegate: class {
+    func onCompletionOfDismissingAlert(for type: AlertType)
+}
+
+
 class LLCentralAlertVC: UIViewController {
-    
     let containerView = UIView(frame: .zero)
     let imageView = UIImageView(frame: .zero)
     let titleLabel = LLTitleLabel(fontSize: 20, fontColor: .label)
-    var vcToDismiss: UIViewController?
+    weak var delegate: LLCentralAlertVCDelegate?
     var currentType: AlertType?
     
     override func viewDidLoad() {
@@ -29,6 +38,7 @@ class LLCentralAlertVC: UIViewController {
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: false)
     }
     
+    
     private func configure() {
         view.backgroundColor =  UIColor(red: 0, green: 0, blue: 0, alpha: 0.0)
         
@@ -40,16 +50,15 @@ class LLCentralAlertVC: UIViewController {
     
     
     @objc func fireTimer() {
-        DispatchQueue.main.async {
+        guard let currentAlertType = self.currentType, let delegateVC = self.delegate else {
             self.dismiss(animated: true, completion: nil)
-            self.currentType == AlertType.success ? self.vcToDismiss?.dismiss(animated: true, completion: nil) : nil
+            return
         }
+        
+        DispatchQueue.main.async { self.dismiss(animated: true) { delegateVC.onCompletionOfDismissingAlert(for: currentAlertType) }}
     }
     
-    
-    
-    
-    
+
     private func layoutUI() {
         view.addSubview(containerView)
         containerView.addSubview(imageView)
@@ -71,32 +80,23 @@ class LLCentralAlertVC: UIViewController {
             titleLabel.heightAnchor.constraint(equalToConstant: 23)
             
         ])
-        
-        
-        
-        
     }
     
     
-    #warning("Refaktorirati u konstante")
     func set(type: AlertType ) {
         currentType = type
         
         switch type {
         case .success:
-            imageView.image = UIImage(systemName: "checkmark")
-            titleLabel.text = "Payment Suceedded"
+            imageView.image = UIImage(systemName: SFSymbols.success)
+            titleLabel.text = Constants.paymentSuccess
             imageView.tintColor = .systemGreen
         case .error:
-            imageView.image = UIImage(systemName: "xmark")
-            titleLabel.text = "Payment Failed"
+            imageView.image = UIImage(systemName: SFSymbols.error)
+            titleLabel.text = Constants.paymentFailed
             imageView.tintColor = .systemRed
         }
     }
     
     
-}
-
-enum AlertType {
-    case success, error
 }

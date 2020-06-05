@@ -134,3 +134,16 @@ extension CheckoutVC: STPAuthenticationContext {
         return self
     }
 }
+
+
+extension CheckoutVC: LLCentralAlertVCDelegate {
+    func onCompletionOfDismissingAlert(for type: AlertType) {
+        switch type {
+        case .success:
+            self.dismiss(animated: true, completion: nil)
+        case .error:
+            break
+        }
+    }
+
+}

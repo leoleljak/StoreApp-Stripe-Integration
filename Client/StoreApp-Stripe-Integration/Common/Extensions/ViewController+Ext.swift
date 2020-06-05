@@ -15,7 +15,7 @@ extension UIViewController {
         DispatchQueue.main.async {
             let vc = LLCentralAlertVC()
             vc.modalPresentationStyle = .overFullScreen
-            vc.vcToDismiss = self
+            vc.delegate = self as? LLCentralAlertVCDelegate
             vc.set(type: alertType)
             self.present(vc, animated: true, completion: nil)
             self.generateFeedback(type: alertType)

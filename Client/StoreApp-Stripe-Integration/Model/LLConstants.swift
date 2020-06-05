@@ -15,6 +15,8 @@ enum SFSymbols {
     static let storeFilled = "bag.fill"
     static let cartFilled = "cart.fill"
     static let avatarImage = "person.crop.circle"
+    static let success = "checkmark"
+    static let error = "xmark"
     
 }
 
@@ -23,6 +25,9 @@ enum Constants {
     static let storeTitle = "Store"
     static let cartTitle = "Cart"
     static let API_URL = "http://192.168.1.8/api/"
+    
+    static let paymentSuccess = "Payment Suceedded"
+    static let paymentFailed = "Payment Failed"
 }
 
 enum RadioStates: String{

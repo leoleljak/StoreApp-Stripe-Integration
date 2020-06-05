@@ -35,7 +35,6 @@ class ProductImage: UIImageView {
         addSubview(activityIndicator)
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         
-        
         NSLayoutConstraint.activate([
             activityIndicator.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             activityIndicator.centerXAnchor.constraint(equalTo: self.centerXAnchor)
@@ -54,7 +53,7 @@ class ProductImage: UIImageView {
     
     
     func startAnimatingActivity() {
-           activityIndicator.startAnimating()
+        activityIndicator.startAnimating()
     }
     
     

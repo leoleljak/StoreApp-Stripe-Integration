@@ -34,6 +34,10 @@ enum RadioStates: String{
     case radioChecked, radioUnchecked
 }
 
+enum ReuseIdentifiers {
+    static let productCell = "ProductCell"
+}
+
 
 
 

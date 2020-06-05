@@ -36,7 +36,7 @@ Your Name – [@leoleljak](https://twitter.com/leoleljak) – leo.leljak@icloud.
 
 Distributed under the MIT license. See ``LICENSE`` for more information.
 
-[https://github.com/leoleljak/github-link](https://github.com/leoleljak/)
+[My other repos](https://github.com/leoleljak?repositories)
 
 [swift-image]:https://img.shields.io/badge/swift-3.0-orange.svg
 [swift-url]: https://swift.org/

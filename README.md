@@ -1,4 +1,4 @@
-# Product Name
+# Integration Of Stripe Payment in Demo StoreApp
 > Short blurb about what your product does.
 
 [![Swift Version][swift-image]][swift-url]

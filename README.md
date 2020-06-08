@@ -23,6 +23,9 @@
 - [x] PHP Server Side
 - [x] MVC Architecture
 
+## Project Architecture
+![](Resources/Images/Architecture.png)
+
 ## Requirements
 
 - Open Stripe account and get your API keys
